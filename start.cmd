@@ -1,1 +1,1 @@
-..\artifacts\FXServer.exe +exec configs/server.cfg +set onesync on +set sv_enforceGameBuild 1355 +set gamename rdr3 +set svgui_disable true
+..\server-files\FXServer.exe +exec server.cfg +set onesync on +set sv_enforceGameBuild 1355 +set gamename rdr3 +set svgui_disable true

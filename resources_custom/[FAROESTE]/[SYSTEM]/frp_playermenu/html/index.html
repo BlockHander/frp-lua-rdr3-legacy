@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+
+    <body>
+        <div class="nothing"></div>
+        <div class="center">
+        
+            <p id="username">blckhndr</p>
+            <p id="charname">Jack Wilson</p>
+            <p id="playtime">1548 perc</p>
+            <p id="money">$38.42</p>
+            <p id="level">LEVEL 5</p>
+            <p id="uid">1</p>
+            <p id="cid">1</p>
+            <p></p>
+            <p id="gold">12.32</p>
+            <p id="xp">8042 XP</p>
+            <p id="role">OWNER</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div class="nothing"></div>
+        <script type="text/javascript">
+        $(function() {
+            window.addEventListener('message', function(event) {
+        
+                if (event.data.type === "openHUD") {
+                    let item = event.data;
+                    
+                    
+                } else if (event.data.type === "closeAll") {
+                    $('.center').css('display', 'none')
+                }
+        
+        
+        
+            });
+
+            function openUI(item) {
+                $("#username").html(item.data.username);
+                    $("#charname").html(item.data.charname);
+                    $("#playtime").html(item.data.playtime);
+                    $("#money").html(item.data.money);
+                    $("#level").html(item.data.level);
+                    $("#uid").html(item.data.uid);
+                    $("#cid").html(item.data.cid);
+                    $("#gold").html(item.data.gold);
+                    $("#xp").html(item.data.xp);
+                    $("#role").html(item.data.role);
+                    setTimeout(function() {
+                        $('.center').css('display', 'block')
+                    }, 100);
+            }
+        });</script>
+    </body>
+
+</html>
